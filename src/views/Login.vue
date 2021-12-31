@@ -20,11 +20,11 @@ import useLogin from '@/composables/useLogin'
 
 export default {
   setup() {
-    const email = ref('')
-    const password = ref('')
+    const { login, error } = useLogin()
     const router = useRouter()
 
-    const { login, error } = useLogin()
+    const email = ref('')
+    const password = ref('')
 
     const handleSubmit = async () => {
       await login(email.value, password.value)

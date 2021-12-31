@@ -9,15 +9,15 @@
         <button @click="handleClick">Logout</button>
       </div>
       
-      <!-- for logged out users -->
-      <div v-else>
+      <!-- logged out users -->
+      <div v-if="!user">
         <router-link to="/login">Login</router-link>
         <router-link to="/signup">Signup</router-link>
       </div>
     </nav>
 
     <!-- show user email -->
-    <div v-if="user">Logged in as {{ user.email }}</div>
+    <p v-if="user">logged in as {{ user.email }}</p>
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
   setup() {
     const { user } = getUser()
 
-    const handleClick = async () => {
+    const handleClick = () => {
       signOut(auth)
     }
 

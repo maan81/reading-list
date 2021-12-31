@@ -15,7 +15,6 @@ const getCollection = (c) => {
     snapshot.docs.forEach(doc => {
       results.push({...doc.data(), id: doc.id })
     })
-    documents.value = results
 
     // update values
     documents.value = results

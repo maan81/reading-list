@@ -27,8 +27,8 @@ const login = async (email, password) => {
   }
 }
 
-const useLogin = () => {
+const uselogin = () => {
   return { error, isPending, login }
 }
 
-export default useLogin
+export default uselogin
